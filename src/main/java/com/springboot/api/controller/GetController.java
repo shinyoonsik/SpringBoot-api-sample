@@ -1,5 +1,7 @@
 package com.springboot.api.controller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
@@ -8,9 +10,12 @@ import java.util.Map;
 @RequestMapping("/api/get-method")
 public class GetController {
 
+    private final Logger LOGGER = LoggerFactory.getLogger(GetController.class);
+
     // TEST: curl -X GET 'http://localhost:8080/api/v1/hello'
     @GetMapping("/hello")
     public String getHello() {
+        LOGGER.info("DEBUG 레벨 출력");
         return "Hellow World!";
     }
 
@@ -18,11 +23,14 @@ public class GetController {
     // curl -X GET 'http://localhost:8080/api/v1/path-variable/yoonsik'
     @GetMapping("/path-variable/{var}")
     public String getPathVariable(@PathVariable String var) {
+        LOGGER.info("getPathVariable메소드가 호출되었다");
+        LOGGER.info("pathVariable변수: {}", var);
         return var;
     }
 
     @GetMapping("/path-variable2/{variable}")
     public String getPathVariable2(@PathVariable("variable") String var) {
+        LOGGER.info("getPathVariable2가 호출되었다");
         return var;
     }
 
