@@ -1,0 +1,2 @@
+- swagger url
+- .gitignore 추가
