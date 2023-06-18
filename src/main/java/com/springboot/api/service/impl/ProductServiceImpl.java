@@ -6,9 +6,11 @@ import com.springboot.api.dto.ProductResponseDto;
 import com.springboot.api.entity.Product;
 import com.springboot.api.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 
+@Service
 public class ProductServiceImpl implements ProductService {
 
     private final ProductDAO productDAO;
@@ -52,14 +54,14 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public ProductResponseDto changeProductName(Long number, String name) throws Exception {
-        Product updatedProduct = productDAO.updateProductName(number, name);
+    public ProductResponseDto changeProduct(ProductDto productDto) throws Exception {
+        ProductDto updatedProductDto = productDAO.updateProduct(productDto);
 
         ProductResponseDto productResponseDto = new ProductResponseDto();
-        productResponseDto.setNumber(updatedProduct.getNumber());
-        productResponseDto.setPrice(updatedProduct.getPrice());
-        productResponseDto.setName(updatedProduct.getName());
-        productResponseDto.setStock(updatedProduct.getStock());
+        productResponseDto.setNumber(updatedProductDto.getNumber());
+        productResponseDto.setPrice(updatedProductDto.getPrice());
+        productResponseDto.setName(updatedProductDto.getName());
+        productResponseDto.setStock(updatedProductDto.getStock());
 
         return productResponseDto;
     }

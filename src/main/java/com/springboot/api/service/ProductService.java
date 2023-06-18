@@ -6,7 +6,7 @@ import com.springboot.api.dto.ProductResponseDto;
 public interface ProductService {
     ProductResponseDto getProduct(Long number);
     ProductResponseDto saveProduct(ProductDto productDto);
-    ProductResponseDto changeProductName(Long number, String name) throws Exception;
+    ProductResponseDto changeProduct(ProductDto productDto) throws Exception;
     void deleteProduct(Long number) throws Exception;
 
 
