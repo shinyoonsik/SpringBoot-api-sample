@@ -33,6 +33,7 @@ public class ProductDAOImpl implements ProductDAO {
 
     @Override
     public Product updateProductName(Long number, String name) throws Exception {
+        // 검증 로직
         Optional<Product> selectedProduct = productRepository.findById(number);
 
         Product updatedProduct;
@@ -52,6 +53,7 @@ public class ProductDAOImpl implements ProductDAO {
 
     @Override
     public void deleteProduct(Long number) throws Exception {
+        // 검증 로직
         Optional<Product> selectedProduct = productRepository.findById(number);
 
         if (selectedProduct.isPresent()) {
