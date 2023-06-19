@@ -34,7 +34,7 @@ class ProductControllerTest {
     @DisplayName("테스트: product 가져오기")
     void getProductTest() throws Exception {
         // given
-        String productId = "123";
+        Long productId = 123L;
         given(productService.getProduct(123L)).willReturn(
                 new ProductResponseDto(123L, "pen", 1000, 10));
 

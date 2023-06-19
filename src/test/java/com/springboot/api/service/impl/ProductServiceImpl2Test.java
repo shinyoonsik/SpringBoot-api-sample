@@ -23,7 +23,7 @@ import static org.mockito.Mockito.verify;
 @ExtendWith(SpringExtension.class)
 @Import({ProductServiceImpl.class})
 public class ProductServiceImpl2Test {
-    
+
     @MockBean
     private ProductDAO productDAO;
 
@@ -48,7 +48,7 @@ public class ProductServiceImpl2Test {
     @Test
     void saveProduct() {
         Mockito.when(productDAO.insertProduct(any(Product.class)))
-                .then(returnsFirstArg());
+                .then(returnsFirstArg()); // 첫번째 인자는 insertProduct()메소드의 첫번째 인자를 의미한다. insertProduct(arg1, arg2)에서 arg1을 의미함
 
         ProductResponseDto result = productService.saveProduct(new ProductDto(null, "펜", 1000, 1234));
 
