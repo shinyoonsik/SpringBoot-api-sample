@@ -35,8 +35,16 @@ public class TestLifeCycle {
     }
 
     @Test
-    @Disabled
+    @DisplayName("Test case 2")
     void test2(){
+        System.out.println();
+        System.out.println("테스트2 시작~");
+        System.out.println();
+    }
+
+    @Test
+    @Disabled
+    void test3(){
         System.out.println("for disabled");
     }
 

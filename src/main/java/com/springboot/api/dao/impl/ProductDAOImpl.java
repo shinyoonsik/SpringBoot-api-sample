@@ -39,7 +39,6 @@ public class ProductDAOImpl implements ProductDAO {
         if(selectedProduct.isPresent()){
             Product product = selectedProduct.get();
             
-            // "" or null 체크!! update로직 검색해보기
             if(productDto.getNumber() != null && productDto.getNumber() != 0) product.setNumber(productDto.getNumber());
             if(productDto.getName() != null && !productDto.getName().isBlank()) product.setName(productDto.getName());
             product.setStock(productDto.getStock());
