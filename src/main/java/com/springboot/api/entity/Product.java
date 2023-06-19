@@ -7,6 +7,7 @@ import java.time.LocalDateTime;
 
 
 @Entity
+@Builder
 @Getter
 @Setter
 @ToString(exclude = "price") // price필드만 제외하고 string을 생성함
