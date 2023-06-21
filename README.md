@@ -1,4 +1,5 @@
 # SpringBoot CRUD Template
+Build Tool: Gradle
 - 기술 스택
   - SpringBoot 3.1.0
   - Java 17
