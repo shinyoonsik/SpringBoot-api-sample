@@ -1,4 +1,10 @@
 # SpringBoot CRUD Template
+- 기술 스택
+  - SpringBoot 3.1.0
+  - Java 17
+  - Spring Data jpa
+  - Gradle
+  - MySQL
 - 프로젝트 구조
   - `com.springboot.api`  
     ㄴ [폴더] `config`  
